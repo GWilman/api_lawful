@@ -22,6 +22,8 @@ app.use(bodyParser.json());
 
 app.post('/email', (req, res) => {
 
+  console.log('BODY', req.body);
+
   const mailOptions = {
     from: process.env.EMAIL_ADDRESS, // sender address
     to: req.body.sendTo, // list of receivers
