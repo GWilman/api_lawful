@@ -2,6 +2,8 @@ const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
 
+console.log('VARIABLES', process.env);
+
 const port = process.env.PORT || 3000;
 // const emailConfig = require('./email_config.js');
 
