@@ -1,21 +1,21 @@
 {
-  "name": "roy_api",
+  "name": "api_lawful",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node index.js"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/GWilman/roy_api.git"
+    "url": "git+https://github.com/GWilman/api_lawful.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/GWilman/roy_api/issues"
+    "url": "https://github.com/GWilman/api_lawful/issues"
   },
-  "homepage": "https://github.com/GWilman/roy_api#readme",
+  "homepage": "https://github.com/GWilman/api_lawful#readme",
   "dependencies": {
     "express": "^4.16.4",
     "nodemailer": "^4.6.8"
