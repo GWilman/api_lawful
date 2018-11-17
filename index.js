@@ -1,11 +1,12 @@
 const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
+const moment = require('moment');
 
 console.log('VARIABLES', process.env);
 
 const port = process.env.PORT || 3000;
-// const emailConfig = require('./email_config.js');
+// const emailConfig = require('./email_config.js'); // use email_config file for testing locally
 
 const nodemailer = require('nodemailer');
 const transporter = nodemailer.createTransport({
@@ -27,8 +28,8 @@ app.post('/email', (req, res) => {
   const mailOptions = {
     from: process.env.EMAIL_ADDRESS, // sender address
     to: req.body.sendTo, // list of receivers
-    subject: 'New message for Lawful', // Subject line
-    html: `<p>${req.body.message}</p><p>${req.body.fromName} - ${req.body.fromEmail}</p>`// plain text body
+    subject: 'New message received from Lawful website', // Subject line
+    html: `<p>Message received from ${req.body.fromName} (${req.body.fromEmail}) at ${moment().format('dddd, MMMM Do YYYY, h:mm:ss a')}</p><p>"${req.body.message}"</p>`// plain text body
   };
 
   transporter.sendMail(mailOptions, function(err, info) {
